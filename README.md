@@ -1,6 +1,6 @@
 ## MCLongRange
 This repository accompanies the article 
-*Markov-chain sampling for long-range systems without evaluating the energy*,
+[Markov-chain sampling for long-range systems without evaluating the energy](https://doi.org/10.48550/arXiv.2406.00184),
 by Gabriele Tartero and Werner Krauth. It contains all the supplementary 
 material discussed in Appendix A.
 
@@ -9,13 +9,13 @@ The [Python](https://github.com/jellyfysh/MCLongRange/tree/master/Python) direct
 contains four simulations of a system of $N$ particles interacting via a Lennard-Jones 
 potential in a periodic box, with $\beta = 1$: 
 * [metropolis.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/metropolis.py),
-  the standard (non-factorized) Metropolis algorithm (see Sec. II.A);
+  the standard (non-factorized) Metropolis algorithm (Sec. II.A);
 * [multi-step_metropolis.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/multi-step_metropolis.py),
   the multi-time-step Metropolis (Sec. II.A and Alg. 1 in particular);
 * [MC_cell-veto.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/MC_cell-veto.py),
-  the reversible version of the cell-veto algorithm (see Sec. III.C);
+  the reversible version of the cell-veto algorithm (Sec. III.C);
 * [EC_cell-veto.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/EC_cell-veto.py),
-  the non-reversible version of the cell-veto algorithm (see Sec. III.B).
+  the non-reversible version of the cell-veto algorithm (Sec. III.B).
 
 All these algorithms rely on [functions.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/functions.py),
 which contains some basic functions and parameters. For given values of $N$ and $\rho$ (the system density),
