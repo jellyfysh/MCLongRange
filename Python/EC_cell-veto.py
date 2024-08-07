@@ -9,7 +9,7 @@
 # This program implements the non-reversible cell-veto algorithm for a two dimensional Lennard-Jones system.
 # It corresponds to the event-chain version of Algorithm 4 (cell-veto(patch)) in the manuscript, with the
 # set S_veto sampled using Walker's algorithm (illustrated in Figure 8).
-# Event-chain Monte Carlo algorithms are not explicitly discussed in the manuscript. For a full explanation, see
+# Event-chain Monte Carlo algorithms are not discussed in detail in the manuscript. For a full explanation, see
 # references [32], [36], [38].
 #
 # To produce output files, uncomment the last lines of the script.
