@@ -1,3 +1,15 @@
+# MCLongRange - repository accompanying the manuscript "Markov-chain sampling for long-range systems without
+# evaluating the energy" by Gabriele Tartero & Werner Krauth - https://github.com/jellyfysh/MCLongRange
+# Copyright (C) 2024 The JeLLyFysh organization
+#
+# MCLongRange is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+# License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+# version (see the LICENSE file).
+#
+# This program implements both Algorithm 5 (poisson-veto) and Algorithm 6
+# (poisson-veto(patch)) in the manuscript in a pedagogical way, and compares their outcomes.
+# The probabilities q are simply generated as random numbers.
+#
 import random
 import math
 

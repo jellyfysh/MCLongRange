@@ -1,3 +1,13 @@
+# MCLongRange - repository accompanying the manuscript "Markov-chain sampling for long-range systems without
+# evaluating the energy" by Gabriele Tartero & Werner Krauth - https://github.com/jellyfysh/MCLongRange
+# Copyright (C) 2024 The JeLLyFysh organization
+#
+# MCLongRange is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+# License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+# version (see the LICENSE file).
+#
+# This program contains some auxiliary functions needed to run the Markov-chain algorithms.
+#
 import math
 
 sigma = 1.0
@@ -52,6 +62,7 @@ def displacement_advanced(active_particle, target_particle, delta_u, size):
         delta_u_period = abs(u_lj(r_min) - u_lj(r_well)) + abs(u_lj(r_max) - u_lj(r_well))
     n_periods = int(delta_u / delta_u_period)
     du = delta_u_period * n_periods
+    # remaining variation of u_lj
     u_left = delta_u - du
     if u_left <= 0.0:
         return size * n_periods

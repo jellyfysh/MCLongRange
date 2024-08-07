@@ -1,3 +1,17 @@
+# MCLongRange - repository accompanying the manuscript "Markov-chain sampling for long-range systems without
+# evaluating the energy" by Gabriele Tartero & Werner Krauth - https://github.com/jellyfysh/MCLongRange
+# Copyright (C) 2024 The JeLLyFysh organization
+#
+# MCLongRange is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+# License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+# version (see the LICENSE file).
+#
+# This program implements the reversible cell-veto algorithm for a two dimensional Lennard-Jones system.
+# It corresponds to Algorithm 4 (cell-veto(patch)) in the manuscript, with the set S_veto
+# sampled using Algorithm 6 (poisson-veto(patch)). The latter relies on Walker's algorithm, illustrated in Figure 8.
+#
+# To produce output files, uncomment the last lines of the script.
+#
 import random
 import math
 import os.path
@@ -86,7 +100,7 @@ else:
         particle_cells[r * j].append([x, y])
     surplus_cells = []
 
-# sampling valid configurations
+# sampling
 n_samples = 10 ** 2
 u_evals = 0
 distance = 0.0
@@ -161,11 +175,16 @@ for sample in range(n_samples):
     pair_part = random.sample(conf, 2)
     pair_correlations.append(per_dist(pair_part[0], pair_part[1], L))
 
-print("Evaluations/length: " + str(u_evals / distance))
+print("Evaluations/distance: " + str(u_evals / distance))
 
 with open(filename, "w") as file:
     file.write(str(conf))
+
+# to produce a file containing scaling data for this algorithm, uncomment the following two lines and run the program
+# several times with different values of N
 # with open('ScalingData/MCCellVetoScaling.data', "a") as file:
 #     file.write(str([N, u_evals / distance]) + '\n')
+
+# to produce a file containing pair-correlation data for this algorithm, uncomment the following two lines
 # with open('PairCorrelationData/MCCellVeto' + str(N) + 'Correlation.data', "w") as file:
 #     file.write(str(pair_correlations))
