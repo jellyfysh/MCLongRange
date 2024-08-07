@@ -7,7 +7,7 @@
 # version (see the LICENSE file).
 #
 # This program plots the scaling data, stored in the folder ScalingData/, for different Markov chain algorithms.
-# It has been used to generate Figure 10 in the manuscript.
+# It can be used to reproduce Figure 10 of the manuscript.
 #
 import glob
 from matplotlib import pyplot
