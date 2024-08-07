@@ -18,7 +18,7 @@ potential in a periodic box, with $\beta = 1$:
   the reversible version of the cell-veto algorithm (Algorithm 4 `(cell-veto(patch))` in the manuscript, with the 
   set $\mathcal{S}_{\text{veto}}$ sampled using Algorithm 6 `(poisson-veto(patch))`);
 * [EC_cell-veto.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/EC_cell-veto.py),
-  the non-reversible version of the cell-veto algorithm `(Algorithm 4 (cell-veto(patch))` in the manuscript, with the 
+  the non-reversible version of the cell-veto algorithm (Algorithm 4 `(cell-veto(patch))` in the manuscript, with the 
   set $\mathcal{S}_{\text{veto}}$ sampled using Walker's algorithm).
 
 Moreover, the script [posson_veto.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/poisson_veto.py) implements Algorithms 5 (poisson-veto) and 6 (poisson-veto(patch)) in a pedagogical way, and compares their outcomes.
