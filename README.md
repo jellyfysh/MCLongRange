@@ -11,14 +11,14 @@ potential in a periodic box, with $\beta = 1$:
 * [metropolis.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/metropolis.py),
   the standard (non-factorized) Metropolis algorithm (discussed in Section II.A);
 * [multi-step_metropolis.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/multi-step_metropolis.py),
-  the multi-time-step Metropolis (Algorithm 1 (multi-step-metropolis) in the manuscript);
+  the multi-time-step Metropolis (Algorithm 1 `(multi-step-metropolis)` in the manuscript);
 * [factorized_metropolis.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/factorized_metropolis.py),
-  the factorized Metropolis algorithm (Algorithm 2 (factorized-metropolis) in the manuscript);
+  the factorized Metropolis algorithm (Algorithm 2 `(factorized-metropolis)` in the manuscript);
 * [MC_cell-veto.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/MC_cell-veto.py),
-  the reversible version of the cell-veto algorithm (Algorithm 4 (cell-veto(patch)) in the manuscript, with the 
-  set $\mathcal{S}_{\text{veto}}$ sampled using Algorithm 6 (poisson-veto(patch)));
+  the reversible version of the cell-veto algorithm (Algorithm 4 `(cell-veto(patch))` in the manuscript, with the 
+  set $\mathcal{S}_{\text{veto}}$ sampled using Algorithm 6 `(poisson-veto(patch))`);
 * [EC_cell-veto.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/EC_cell-veto.py),
-  the non-reversible version of the cell-veto algorithm (Algorithm 4 (cell-veto(patch)) in the manuscript, with the 
+  the non-reversible version of the cell-veto algorithm `(Algorithm 4 (cell-veto(patch))` in the manuscript, with the 
   set $\mathcal{S}_{\text{veto}}$ sampled using Walker's algorithm).
 
 Moreover, the script [posson_veto.py](https://github.com/jellyfysh/MCLongRange/blob/master/Python/poisson_veto.py) implements Algorithms 5 (poisson-veto) and 6 (poisson-veto(patch)) in a pedagogical way, and compares their outcomes.
