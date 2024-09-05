@@ -1,8 +1,12 @@
 ## MCLongRange
 This repository accompanies the article 
-[Markov-chain sampling for long-range systems without evaluating the energy](https://doi.org/10.48550/arXiv.2406.00184),
+[Markov-chain sampling for long-range systems without evaluating the energy](https://github.com/jellyfysh/MCLongRange/blob/master/Markov-chain_sampling_for_long-range_systems_without_evaluating_the_energy.pdf),
 by Gabriele Tartero and Werner Krauth. It contains all the supplementary 
 material discussed in Appendix A.
+
+This article may be downloaded for personal use only. Any other use requires prior permission of the author 
+and AIP Publishing. This article appeared in The Journal of Chemical Physics, Volume 161, Issue 9 (September 2024) 
+and may be found also [here](https://doi.org/10.1063/5.0225561).
 
 ### Python programs
 The [Python](https://github.com/jellyfysh/MCLongRange/tree/master/Python) directory
