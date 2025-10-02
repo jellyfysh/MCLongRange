@@ -64,9 +64,9 @@ with open(filename, "w") as file:
 
 # to produce a file containing scaling data for this algorithm, uncomment the following two lines and run the program
 # several times with different values of N
-# with open('ScalingData/MetropolisScaling.data', "a") as file:
+# with open('ScalingData/MetropolisScaling_rho' + str(density) + '.data', "a") as file:
 #     file.write(str([N, u_evals / distance]) + '\n')
 
 # to produce a file containing pair-correlation data for this algorithm, uncomment the following two lines
-# with open('PairCorrelationData/Metropolis' + str(N) + 'Correlation.data', "w") as file:
+# with open('PairCorrelationData/Metropolis_N' + str(N) + '_rho' + str(density) + '_Correlation.data', "w") as file:
 #     file.write(str(pair_correlations))

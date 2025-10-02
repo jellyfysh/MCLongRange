@@ -217,5 +217,5 @@ with open(filename, "w") as file:
 #     file.write(str([N, u_evals / distance]) + '\n')
 
 # to produce a file containing pair-correlation data for this algorithm, uncomment the following two lines
-# with open('PairCorrelationData/ECCellVeto' + str(N) + 'Correlation.data', "w") as file:
+# with open('PairCorrelationData/ECCellVeto_N' + str(N) + '_rho' + str(density) + '_Correlation.data', "w") as file:
 #     file.write(str(pair_correlations))

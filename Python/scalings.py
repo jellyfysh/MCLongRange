@@ -11,19 +11,28 @@
 #
 import glob
 from matplotlib import pyplot
+import scienceplots
 
-pyplot.xlabel("Number of particles", fontsize=20)
-pyplot.ylabel("Energy evaluations per displacement", fontsize=20)
-pyplot.xscale("log")
-pyplot.yscale("log")
+pyplot.style.use("science")
+
+density = 0.05
+
+title = r"$\rho = $" + str(density)
+
+fig, ax = pyplot.subplots(figsize=(7, 5))
+ax.set_xlabel("Number of particles", fontsize=20)
+ax.set_ylabel("Energy evaluations per displacement", fontsize=20)
+ax.set_xscale("log")
+ax.set_yscale("log")
 markers = ["d", "o", "v", "^", "X"]
 for file in glob.glob('ScalingData/*.data'):
     j = glob.glob('ScalingData/*.data').index(file)
-    label = file.split("data")[0][12:-8]
+    label = file.split("_")[0][12:-7]
     data = [eval(line.rstrip()) for line in open(file, 'r')]
     data.sort()
     n_particles = [d[0] for d in data]
     scaling_data = [d[1] for d in data]
-    pyplot.plot(n_particles, scaling_data, label=label, linestyle='-', marker=markers[j], markersize=10)
-pyplot.legend(fontsize=18)
+    ax.plot(n_particles, scaling_data, label=label, linestyle='-', marker=markers[j], markersize=10)
+pyplot.legend(fontsize=16)
+ax.set_title(title, fontsize=18)
 pyplot.show()

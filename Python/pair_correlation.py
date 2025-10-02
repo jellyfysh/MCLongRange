@@ -13,15 +13,23 @@
 import numpy as np
 from matplotlib import pyplot
 import glob
+import scienceplots
 
-pyplot.rcParams["text.usetex"] = True
+pyplot.style.use("science")
 
-pyplot.xlabel(r"$|\Delta r|$", fontsize=20)
-pyplot.ylabel(r"$\pi(|\Delta r|)$", fontsize=20)
-for file in glob.glob("PairCorrelationData/*.data"):
-    label = file.split("data")[0][20:-12]
+N = 100
+density = 0.05
+
+title = r"$N = $" + str(N) + r"$, \, \rho = $" + str(density)
+
+fig, ax = pyplot.subplots(figsize=(7, 5))
+ax.set_xlabel(r"$|\Delta r|$", fontsize=20)
+ax.set_ylabel(r"$\pi(|\Delta r|)$", fontsize=20)
+for file in glob.glob("PairCorrelationData/*_N" + str(N) + "_rho" + str(density) + "*_Correlation.data"):
+    label = file.split("_")[0][20:]
     data = eval(open(file).readline())
     bins_x = np.linspace(min(data), max(data), 100)
-    pyplot.hist(data, bins_x, label=label, density=True, cumulative=False, histtype="step")
-pyplot.legend(fontsize=18)
+    ax.hist(data, bins_x, label=label, density=True, cumulative=False, histtype="step")
+ax.legend(fontsize=16)
+ax.set_title(title, fontsize=18)
 pyplot.show()
