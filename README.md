@@ -59,6 +59,10 @@ The authors of this project are:
 For any question about the MCLongRange software package, or the related
 paper, please raise an issue here on GitHub or contact us via e-mail.
 
+### Additional contributors
+The authors are grateful to Sora Shiratani (University of Tokyo) for his help in 
+detecting and solving bugs and for suggesting several improvements to this software package.
+
 ### License
 This project is licensed under the GNU General Public License, 
 version 3 (see the 
