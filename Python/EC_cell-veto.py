@@ -23,10 +23,10 @@ N = 100
 density = 0.05
 L = math.sqrt(N / density)
 directions = [[1.0, 0.0], [0.0, 1.0]]
-chain_length = 2.0
+chain_length = 40.0
 
 # generating the differential cell rates
-n = 20
+n = 67
 n_cells = n ** 2
 cell_size = L / n
 neighbor_indices = [(i % n) + n * (j % n) for i in [-1, 0, 1] for j in [-1, 0, 1]]
@@ -100,12 +100,12 @@ else:
     surplus_cells = []
 
 # sampling
-n_samples = 10 ** 2
+n_chains = 10 ** 2
 u_evals = 0
 distance = 0.0
 pair_correlations = []
-for sample in range(n_samples):
-    print(sample)
+for chain in range(n_chains):
+    print(chain)
     sigma = random.choice(directions)
     part = random.choice(conf)
     current_length = 0.0
@@ -189,7 +189,18 @@ for sample in range(n_samples):
             t_cell = (active_cell % n + t_index % n) % n + n * ((int(active_cell / n) + int(t_index / n)) % n)
             if particle_cells[t_cell]:
                 target_particle = particle_cells[t_cell][0]
-                if random.random() < du_lj(per_dist(part, target_particle, L)) / diff_rates[t_index]:
+                r = per_dist(part, target_particle, L)
+                # computing the x or y separation (depending on sigma) between the active and the target particle
+                if sigma == [1.0, 0.0]:
+                    p_1, p_2 = target_particle[0], part[0]
+                else:
+                    p_1, p_2 = target_particle[1], part[1]
+                if abs(p_2 - p_1) < L / 2:
+                    d = p_2 - p_1
+                else:
+                    d = p_2 - p_1 - L if p_2 > p_1 else p_2 - p_1 + L
+                # checking whether the cell-veto rejection was fake or not, using the real rejection rate
+                if random.random() < (du_lj(r) * (d / r)) / diff_rates[t_index]:
                     j = conf.index(target_particle)
                     part = conf[j]
     pair_part = random.sample(conf, 2)
