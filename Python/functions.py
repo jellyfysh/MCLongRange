@@ -34,8 +34,8 @@ def du_lj(r):
 def r_disp(r0, delta_u):
     if 1.0 - math.sqrt(1.0 + (u_lj(r0) + delta_u) / epsilon) == 0.0:
         return [1.0, math.inf]
-    r1 = (0.5 * (1.0 - math.sqrt(1.0 + (u_lj(r0) + delta_u) / epsilon))) ** (-1 / 6)
-    r2 = (0.5 * (1.0 + math.sqrt(1.0 + (u_lj(r0) + delta_u) / epsilon))) ** (-1 / 6)
+    r1 = sigma * (0.5 * (1.0 - math.sqrt(1.0 + (u_lj(r0) + delta_u) / epsilon))) ** (-1 / 6)
+    r2 = sigma * (0.5 * (1.0 + math.sqrt(1.0 + (u_lj(r0) + delta_u) / epsilon))) ** (-1 / 6)
     return [r1, r2] if r1.imag == 0.0 else [-1.0, r2]
 
 
