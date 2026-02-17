@@ -63,6 +63,9 @@ paper, please raise an issue here on GitHub or contact us via e-mail.
 The authors are grateful to Sora Shiratani (University of Tokyo) for his help in 
 detecting and solving bugs and for suggesting several improvements to this software package.
 
+The authors are also thankful to Kush Patel (University of Oxford) for detecting a missing factor
+in one method of functions.py.
+
 ### License
 This project is licensed under the GNU General Public License, 
 version 3 (see the 
